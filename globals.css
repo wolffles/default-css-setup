@@ -45,6 +45,9 @@ Any UI element that needs to stand out against the background */
     --nav-bg: #20283a;
   }
 }
+* {
+    box-sizing: border-box;
+}
 
 body {
   background: var(--background);
