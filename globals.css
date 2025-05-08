@@ -1,0 +1,99 @@
+/* 
+tailwindcss
+postcss
+run npm tailwindcss init for the postcss.config.js file
+The @import "tailwindcss"; in your CSS will only work if these dependencies are properly installed and configured. */
+@import "tailwindcss";
+
+/* Foreground" implies "what's in front" or "what's on top"
+It's not just for text - it can be used for any element that needs to contrast with the background
+Common uses include:
+Text color
+Icons
+Borders
+SVG elements
+Any UI element that needs to stand out against the background */
+:root {
+  --background: #ffffff;
+  --foreground: #171717; 
+  --card-bg: #ebebeb;
+  --card2-bg: #fff1ea;
+  --text-secondary: #4b5563;
+  --accent: #688fcd;
+  --accent-hover: #2563eb;
+  --nav-bg: #fff1ea;
+  font-size: 16px;
+}
+/* this was added by the create-next-app command but I still don't see the value of doing it keep it here until I can find a use for it */
+/* @theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+} */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --card-bg: #171717;
+    --card2-bg: #323131;
+    --card-border: #374151;
+    --text-secondary: #c1c6d0;
+    --accent: #60a5fa;
+    --accent-hover: #3b82f6;
+    --nav-bg: #20283a;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.w-header-text {
+  font-size: clamp(2.25rem, 3vw, 4rem);
+  font-weight: 300;
+}
+
+.w-sub-header-text {
+  font-size: clamp(1.75rem, 2vw, 3rem);
+}
+
+.w-main-text {
+  font-size: clamp(1.25rem, 1.25vw, 2rem);
+}
+
+.w-sub-text {
+  font-size: clamp(.75rem, 1vw, 1rem);
+}
+
+.w-text-primary {
+  color: var(--foreground);
+}
+.w-text-secondary {
+  color: var(--text-secondary);
+}
+/* Component styles */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+}
+
+.card2 {
+  background: var(--card2-bg);
+}
+
+.theme-button {
+  background: var(--accent);
+  color: white;
+  padding: 4px 8px 4px 8px;
+  border-radius: 5px;
+}
+
+.theme-button:hover {
+  background: var(--accent-hover);
+}
